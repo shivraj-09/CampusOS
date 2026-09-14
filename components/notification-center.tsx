@@ -45,6 +45,7 @@ export default function NotificationCenter() {
     const next = dismissed.includes(id) ? dismissed : [...dismissed, id];
     setDismissed(next);
     localStorage.setItem(dismissedKey, JSON.stringify(next));
+    window.dispatchEvent(new Event('campus-store-change'));
   };
 
   const visible = seed.filter((notice) => !dismissed.includes(notice.id));
@@ -54,10 +55,10 @@ export default function NotificationCenter() {
   return <section className={styles.panel}>
     <div className={styles.head}>
       <div><span>ACTIVITY CENTER</span><h1>Notifications</h1><p>{unreadCount} {unreadCount === 1 ? 'thing needs' : 'things need'} your attention.</p></div>
-      <button onClick={markAll}><CheckCheck size={15}/> Mark all read</button>
+      <button onClick={markAll} disabled={!unreadCount} aria-label="Mark all notifications as read"><CheckCheck size={15}/> {unreadCount ? 'Mark all read' : 'All read'}</button>
     </div>
     <div className={styles.list}>
-      {visible.map((notice) => <article key={notice.id} className={`${styles.item} ${read.includes(notice.id) ? styles.read : ''}`} onClick={() => markRead(notice.id)}>
+      {visible.map((notice) => <article key={notice.id} className={`${styles.item} ${read.includes(notice.id) ? styles.read : ''}`} onClick={() => markRead(notice.id)} role="button" tabIndex={0} aria-label={`${notice.title}. ${read.includes(notice.id) ? 'Read' : 'Unread'}`} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); markRead(notice.id); } }}>
         <div className={styles.icon}>{icon(notice.kind)}</div>
         <div className={styles.copy}><div><h2>{notice.title}</h2><time>{notice.time}</time></div><p>{notice.body}</p></div>
         <button className={styles.dismiss} aria-label={`Dismiss ${notice.title}`} onClick={(event) => { event.stopPropagation(); dismiss(notice.id); }}><X size={14}/></button>
