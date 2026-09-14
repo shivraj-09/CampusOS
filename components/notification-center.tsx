@@ -1,6 +1,6 @@
 'use client';
 
-import { Bell, CheckCheck, CalendarDays, MessageCircle, Sparkles, X } from 'lucide-react';
+import { CheckCheck, CalendarDays, MessageCircle, Sparkles, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import styles from './notification-center.module.css';
 
