@@ -1,0 +1,18 @@
+'use client';
+import Link from 'next/link';
+import {ArrowUpRight,CalendarDays,Clock3,Flame,MapPin,Plus,TrendingUp,Users,Bookmark,ChevronRight} from 'lucide-react';
+import CampusShell from '@/components/campus-shell';
+import {opportunities,clubs,posts} from '@/lib/campus-data';
+import styles from './home.module.css';
+
+export default function Home(){
+ const urgent=opportunities.filter(o=>o.urgent);
+ return <CampusShell><div className={styles.page}>
+  <section className={styles.hero}><div><div className={styles.eyebrow}><span/>MONDAY · SEPTEMBER 10, 2026</div><h1>Make this week<br/><em>count.</em></h1><p>Your campus, distilled into the things worth your attention — opportunities, people and momentum.</p><div className={styles.heroActions}><Link href="/discover">Explore opportunities <ArrowUpRight size={16}/></Link><button><Plus size={16}/> Quick add</button></div></div><div className={styles.heroMetric}><div className={styles.ring}><strong>74</strong><span>%</span></div><div><b>Profile momentum</b><small>You're ahead of 68% of students.</small></div><div className={styles.spark}><TrendingUp size={15}/><span>+12%</span></div></div></section>
+  <div className={styles.rule}/>
+  <section className={styles.grid}><div className={styles.primary}><div className={styles.sectionHead}><div><span className={styles.kicker}>01 · PRIORITY</span><h2>What matters now</h2></div><Link href="/discover">View all <ChevronRight size={15}/></Link></div><div className={styles.opps}>{urgent.map((o,i)=><Link href="/discover" className={styles.opp} key={o.id}><div className={styles.date}><b>{o.date.split(' ')[1]}</b><span>{o.date.split(' ')[0]}</span></div><div className={styles.oppBody}><div className={styles.type}>{o.type} · {o.deadline}</div><h3>{o.title}</h3><p><MapPin size={12}/>{o.place}<span>•</span>{o.reason}</p><div className={styles.tags}>{o.tags.map(t=><span key={t}>{t}</span>)}</div></div><div className={styles.arrow}><ArrowUpRight size={17}/></div></Link>)}</div></div>
+   <aside className={styles.right}><div className={styles.streakCard}><div className={styles.fire}><Flame size={20}/></div><div><small>YOUR STREAK</small><strong>12 days</strong><p>Keep the momentum going.</p></div><span>+1</span></div><div className={styles.weekCard}><div className={styles.sectionHead}><div><span className={styles.kicker}>THIS WEEK</span><h2>Campus pulse</h2></div></div><div className={styles.stat}><CalendarDays size={16}/><div><b>8</b><span>events on campus</span></div></div><div className={styles.stat}><Users size={16}/><div><b>326</b><span>people active in clubs</span></div></div><div className={styles.stat}><Clock3 size={16}/><div><b>2</b><span>deadlines approaching</span></div></div></div></aside>
+  </section>
+  <section className={styles.lower}><div><div className={styles.sectionHead}><div><span className={styles.kicker}>02 · NETWORK</span><h2>People are building</h2></div><Link href="/community">Community <ChevronRight size={15}/></Link></div><div className={styles.feed}>{posts.slice(0,2).map(p=><article key={p.id}><div className={styles.avatar}>{p.mark}</div><div><span className={styles.type}>{p.kind} · {p.author}</span><h3>{p.title}</h3><p>{p.body}</p><small>♡ {p.likes} &nbsp; · &nbsp; {p.comments} comments</small></div></article>)}</div></div><div><div className={styles.sectionHead}><div><span className={styles.kicker}>03 · YOUR CIRCLE</span><h2>Clubs to watch</h2></div><Link href="/clubs">Explore <ChevronRight size={15}/></Link></div><div className={styles.clubList}>{clubs.slice(0,3).map(c=><Link href="/clubs" key={c.id}><span className={styles.clubMark}>{c.mark}</span><div><b>{c.name}</b><small>{c.activity}</small></div><Bookmark size={15}/></Link>)}</div></div></section>
+ </div></CampusShell>
+}
