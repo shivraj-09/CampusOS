@@ -13,6 +13,7 @@ export default function Home() {
   const rsvps = useCampusCount('rsvps');
   const followed = useCampusCount('followed');
   const [momentumRsvp, toggleMomentumRsvp] = useCampusToggle('rsvps', 'momentum-next');
+  const openCopilot = () => window.dispatchEvent(new Event('campus-open-copilot'));
 
   return (
     <CampusShell>
@@ -29,7 +30,7 @@ export default function Home() {
               </div>
               <div className={styles.introMeta}>
                 <Link href="/discover" className={styles.darkButton}>Explore campus <ArrowUpRight size={13} /></Link>
-                <Link href="/copilot" className={styles.darkButton}>Ask Campus Copilot <Sparkles size={13} /></Link>
+                <button onClick={openCopilot} className={styles.darkButton}>Ask Campus Copilot <Sparkles size={13} /></button>
               </div>
             </div>
             <div className={styles.introOrb} aria-label="Campus network telemetry visual"><div className={styles.orbCore}><Sparkles size={18} /><span>34 ACTIVE NODES</span></div></div>
