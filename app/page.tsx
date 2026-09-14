@@ -57,7 +57,7 @@ export default function Home() {
             <div className={styles.featuredTop}><span>FEATURED NOW</span><span>{urgent[0]?.deadline ?? 'This week'}</span></div>
             <div className={styles.featuredTitle}><span>01</span><h3>{urgent[0]?.title ?? 'Build for Bharat Hackathon'}</h3></div>
             <div className={styles.featuredBottom}>
-              <div><MapPin size={14} /> {urgent[0]?.location ?? 'Innovation Lab'}</div>
+              <div><MapPin size={14} /> {urgent[0]?.place ?? 'Innovation Lab'}</div>
               <div>{(urgent[0]?.tags ?? ['React', 'AI', 'Team']).map((tag) => <span key={tag}>{tag}</span>)}</div>
               <Link href={`/discover/${urgent[0]?.id ?? 'op1'}`}>Open opportunity <ArrowUpRight size={15} /></Link>
             </div>
