@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeft, Bookmark, CalendarCheck, Check, Clock3, MapPin, Users } from 'lucide-react';
+import { ArrowLeft, Bookmark, CalendarCheck, Check, Clock3, MapPin } from 'lucide-react';
 import CampusShell from '@/components/campus-shell';
 import { useCampusToggle } from '@/lib/campus-store';
 import styles from './detail-page.module.css';
