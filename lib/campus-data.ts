@@ -1,6 +1,6 @@
 export const opportunities=[
-{id:'op1',title:'Build for Bharat Hackathon',type:'Hackathon',date:'Sep 14',deadline:'4 days left',place:'Innovation Lab',tags:['React','AI','Team'],reason:'Matches 3 of your skills',urgent:true},
-{id:'op2',title:'Applied AI Systems Workshop',type:'Workshop',date:'Sep 12',deadline:'Tomorrow',place:'Seminar Hall A',tags:['Python','AI'],reason:'Strong match for your interests',urgent:true},
+{id:'op1',title:'Build for Bharat Hackathon',type:'Hackathon',date:'Sep 18',deadline:'4 days left',place:'Innovation Lab',tags:['React','AI','Team'],reason:'Matches 3 of your skills',urgent:true},
+{id:'op2',title:'Applied AI Systems Workshop',type:'Workshop',date:'Sep 15',deadline:'Tomorrow',place:'Seminar Hall A',tags:['Python','AI'],reason:'Strong match for your interests',urgent:true},
 {id:'op3',title:'Open Source Sprint',type:'Competition',date:'Sep 21',deadline:'13 days left',place:'Online',tags:['GitHub','OSS'],reason:'Builds your open-source profile',urgent:false},
 {id:'op4',title:'Student Innovation Grant',type:'Scholarship',date:'Sep 28',deadline:'20 days left',place:'Dean Office',tags:['Projects','Innovation'],reason:'Your project activity qualifies',urgent:false},
 {id:'op5',title:'Frontend Fellowship Night',type:'Internship',date:'Sep 25',deadline:'17 days left',place:'Design Studio',tags:['Next.js','UI'],reason:'Complements your frontend path',urgent:false}
