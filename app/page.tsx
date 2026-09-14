@@ -100,7 +100,7 @@ export default function Home() {
         </section>
 
         <section className={styles.finalScene}>
-          <div className={styles.finalNumber}>END OF BROADCAST · CAMPUSOS 2024</div><h2>Find your next<br /><em>thing.</em></h2><p>Everything relevant happening on campus indexed into a unified workspace. Stop missing crucial registrations and start shipping alongside the best builders.</p><Link className={styles.finalButton} href="/discover">Explore campus <ArrowUpRight size={14} /></Link><div className={styles.finalStats}><span><Flame size={13} /> 12 day streak</span><span><CalendarDays size={13} /> {urgent.length} urgent</span><span><Users size={13} /> {followed} following</span><span><Clock3 size={13} /> Always moving</span></div>
+          <div className={styles.finalNumber}>END OF BROADCAST · CAMPUSOS 2026</div><h2>Find your next<br /><em>thing.</em></h2><p>Everything relevant happening on campus indexed into a unified workspace. Stop missing crucial registrations and start shipping alongside the best builders.</p><Link className={styles.finalButton} href="/discover">Explore campus <ArrowUpRight size={14} /></Link><div className={styles.finalStats}><span><Flame size={13} /> 12 day streak</span><span><CalendarDays size={13} /> {urgent.length} urgent</span><span><Users size={13} /> {followed} following</span><span><Clock3 size={13} /> Always moving</span></div>
         </section>
       </main>
     </CampusShell>
